@@ -12,10 +12,7 @@ get '/pull_requests/new' do
 end
 
 post '/pull_requests' do
-	pr = PullRequest.new
-	pr.creador = params["creador"]
-	pr.link_jira = params["link_jira"]
-	pr.link_github = params["link_github"]
+	pr = PullRequest.new(params)
 
 	@success = pr.save
 
