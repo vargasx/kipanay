@@ -10,7 +10,7 @@
 <% if @success %>
 		<div class="alert-success">Pull Request creado</div>
 <% else %>
-	<h2><%=@error %></h2>
+	<div class="alert-danger"><%=@error %></div>
 <% end %>
 <form method="POST" action="/pull_requests">
 	<div class="form-group">
