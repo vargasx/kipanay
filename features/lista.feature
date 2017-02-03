@@ -14,11 +14,8 @@ Scenario: El usuario ve el titulo de la lista
   And debe ver "Probado-stg?"
 
 Scenario: El usuario ve un PR en la lista
-Given el usuario abre la app
-	Then debe ver "henry"
-	And debe ver "http://jira.com"
-	And debe ver "http://github.com"
-  And debe ver "NO CRITICO"
-  And debe ver "SI SEGURIDAD"
-  And debe ver "NINGUNA"
-  And debe ver "PROBADO STG"
+	Given existe un pull request con parametros "alberto", "http://myjira.com", "http://mygithub.com"
+	And el usuario abre la app
+	Then debe ver "alberto"
+	And debe ver "http://myjira.com"
+	And debe ver "http://mygithub.com"
