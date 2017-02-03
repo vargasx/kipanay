@@ -10,6 +10,10 @@ require 'capybara/cucumber'
 require 'capybara/poltergeist' #Javascript
 
 
+Before do
+  PullRequest.clear
+end
+
 class MyWorld
   include Capybara::DSL
   include RSpec::Expectations

@@ -27,4 +27,8 @@ class PullRequest
 	def self.all
 		@@pull_requests
 	end
+
+	def self.clear
+		@@pull_requests = []
+	end
 end
