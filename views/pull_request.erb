@@ -6,13 +6,27 @@
 <body>
 <h1>Crear Pull Request</h1>
 <form method="POST" action="/pull_requests">
+	Creador
 	<input type="text" name="creador" />
+	<br></br>
+	Link Github
 	<input type="text" name="link_github" />
+	<br></br>
+	Link JIRA
 	<input type="text" name="link_jira" />
+	<br></br>
+	Es critico?
 	<input type="checkbox" name="critico" />
+	<br></br>
+	Necesita revision de seguridad?
 	<input type="checkbox" name="revision_seguridad" />
+	<br></br>
+	Fue revisado en staging?
 	<input type="checkbox" name="revision_staging" />
+	<br></br>
+	Dependencias
 	<input type="text" name="dependencias" />
+	<br/>
 	<input type="submit" name="guardar" value="guardar">
 </form>
 
