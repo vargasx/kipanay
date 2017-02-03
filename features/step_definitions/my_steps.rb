@@ -47,3 +47,9 @@ Given(/^completa el campo de revisor con "([^"]*)" y lo aprueba$/) do |revisor|
   fill_in("revisor", :with => revisor)
   click_button("aprobar")
 end
+
+Given(/^el revisor llena el formulario con campos "([^"]*)", "([^"]*)", "([^"]*)"$/) do |revisor, critico, seguridad|
+  fill_in("revisor", :with => revisor)
+  check("revision_seguridad")
+  check("critico")
+end
