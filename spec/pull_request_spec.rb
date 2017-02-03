@@ -43,5 +43,4 @@ describe PullRequest do
 		pr.link_jira = ""
 		expect(pr.save).to be false
 	end
-
 end

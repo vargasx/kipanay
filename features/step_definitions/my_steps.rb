@@ -1,4 +1,4 @@
-require './lib/pull_request'
+
 Given(/^el usuario abre la app$/) do
   visit "/"
 end
@@ -10,7 +10,9 @@ end
 Given(/^el usuario hace click "([^"]*)"$/) do |button|
   click_button(button)
 end
-
+Given(/^el usuario hace click link "([^"]*)"$/) do |button|
+  click_link(button)
+end
 Given(/^el usuario llena el formulario$/) do
   fill_in("creador", :with => "mvargas")
   fill_in("link_github", :with => "http://githu.com")
@@ -21,6 +23,12 @@ Given(/^el usuario llena el formulario$/) do
   fill_in("dependencias", with: "ninguna")
 end
 
+Given(/^el usuario llena el formulario con campos "([^"]*)", "([^"]*)", "([^"]*)"$/) do |creador, jira, github|
+  fill_in("creador", :with => creador)
+  fill_in("link_github", :with => github)
+  fill_in("link_jira", :with => jira)
+end
+
 Given(/^existe un pull request con parametros "([^"]*)", "([^"]*)", "([^"]*)"$/) do |creador, github, jira|
   pr = PullRequest.new
   pr.creador = creador
@@ -28,7 +36,4 @@ Given(/^existe un pull request con parametros "([^"]*)", "([^"]*)", "([^"]*)"$/)
   pr.link_jira = jira
 
   pr.save
-
-
 end
-

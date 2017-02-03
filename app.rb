@@ -12,11 +12,15 @@ get '/pull_requests/new' do
 end
 
 post '/pull_requests' do
-	@success = false
-	if params['creador'].empty?
+	pr = PullRequest.new
+	pr.creador = params["creador"]
+	pr.link_jira = params["link_jira"]
+	pr.link_github = params["link_github"]
+
+	@success = pr.save
+
+	if !@success
 		@error = "Los campos marcados con * son obligatorios"
-	else
-		@success = true
 	end
 
 	erb :pull_request
