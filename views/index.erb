@@ -18,10 +18,11 @@
 				<td>Seguridad?</td>
 				<td>Dependencias</td>
 				<td>Probado-stg?</td>
+				<td>Acciones</td>
 			</tr>
 		</thead>
 		<tbody>
-			<% @pull_requests.each do |pr|%>
+			<% @pull_requests.each_with_index do |pr, index|%>
 			<tr>
 				<td><%= pr.creador %></td>
 				<td><%= pr.link_github %></td>
@@ -30,6 +31,7 @@
 				<td><%= pr.revision_seguridad %></td>
 				<td><%= pr.dependencias %></td>
 				<td><%= pr.revision_staging %></td>
+				<td id="detalle_0"><a href="/pull_requests/<%= index %>">Ver Detalle</a></td>
 			</tr>
 			<% end %>
 		</tbody>

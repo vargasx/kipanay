@@ -28,7 +28,8 @@ Given(/^existe un pull request con parametros "([^"]*)", "([^"]*)", "([^"]*)"$/)
   pr.link_jira = jira
 
   pr.save
-
-
 end
 
+When(/^el usuario hace click en "([^"]*)"$/) do |boton_ver_detalle|
+  click_link(boton_ver_detalle)
+end
