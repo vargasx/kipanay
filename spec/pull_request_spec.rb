@@ -20,4 +20,14 @@ describe PullRequest do
 		expect(pr.dependencias).to eq "dep1, dep2"
 	end
 
+	it "retorna lista de prs guardados" do
+		pr = PullRequest.new
+		pr.creador = "creador"
+		pr.link_github = "https://ssss"
+		pr.link_jira = "https://aaaa"
+		pr.save
+
+		lista = PullRequest.all
+		expect(lista).to eq [pr]
+	end
 end
