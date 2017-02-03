@@ -14,10 +14,35 @@
 	Link de Github: <%= @pr.link_github %>
 	<br>
 	Link de Jira: <%= @pr.link_jira %>
-
+	
+	<br/>
+	<br/>
 	<form action="/review/<%= @index %>" method="POST">
-		Revisor
-		<input type="text" name="revisor">
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Revisor*</label>
+			<input type="text" name="revisor" />
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Es critico?</label>
+			<input type="checkbox" name="critico" />
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Necesita revision de seguridad?</label>
+			<input type="checkbox" name="revision_seguridad" />
+		</div>
+		</br>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Fue revisado en staging?</label>
+			<input type="checkbox" name="revision_staging" />
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Dependencias</label>
+			<input type="text" name="dependencias" />
+		</div>
+		<br/>
+		* campos obligatorios
+		<br/>
+		<br/>
 		<input type="submit" name="Aprobar" value="aprobar">
 		<input type="submit" name="Denegar" value="denegar">
 	</form>
