@@ -28,3 +28,9 @@ get "/pull_requests/:id" do
 	@pr = PullRequest.all[@index]
 	erb :detail
 end
+
+get "/review/:id" do 
+	@index = params[:id].to_i
+	@pr = PullRequest.all[@index]
+	erb :review
+end
