@@ -29,11 +29,12 @@ Given(/^el usuario llena el formulario con campos "([^"]*)", "([^"]*)", "([^"]*)
   fill_in("link_jira", :with => jira)
 end
 
-Given(/^existe un pull request con parametros "([^"]*)", "([^"]*)", "([^"]*)"$/) do |creador, github, jira|
+Given(/^existe un pull request con parametros "([^"]*)", "([^"]*)", "([^"]*)", "([^"]*)"$/) do |creador, github, jira, dependencias|
   pr = PullRequest.new
   pr.creador = creador
   pr.link_github = github
   pr.link_jira = jira
+  pr.dependencias = dependencias
 
   pr.save
 end

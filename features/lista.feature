@@ -14,7 +14,7 @@ Scenario: El usuario ve el titulo de la lista
   And debe ver "Probado-stg?"
 
 Scenario: El usuario ve un PR en la lista
-	Given existe un pull request con parametros "alberto", "http://myjira.com", "http://mygithub.com"
+	Given existe un pull request con parametros "alberto", "http://myjira.com", "http://mygithub.com", ""
 	And el usuario abre la app
 	Then debe ver "alberto"
 	And debe ver "http://myjira.com"

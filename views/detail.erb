@@ -10,5 +10,13 @@
 	Link de Github: <%= @pr.link_github %>
 	<br>
 	Link de Jira: <%= @pr.link_jira %>
+	<br>
+	Critico?: <%= @pr.critico ? "SI" : "NO" %> CRITICO
+	<br>
+	Seguridad?: <%= @pr.revision_seguridad ? "SI" : "NO" %> SEGURIDAD
+	<br>
+	Dependencias: <%= @pr.dependencias %>
+	<br>
+	Probado stg: <%= @pr.revision_staging ? "SI" : "NO" %> PROBADO
 </body>
 </html>
