@@ -41,3 +41,8 @@ end
 When(/^el usuario hace click en "([^"]*)"$/) do |boton_ver_detalle|
   click_link(boton_ver_detalle)
 end
+
+Given(/^completa el campo de revisor con "([^"]*)" y lo aprueba$/) do |revisor|
+  fill_in("revisor", :with => revisor)
+  click_button("aprobar")
+end

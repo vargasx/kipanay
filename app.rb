@@ -34,3 +34,10 @@ get "/review/:id" do
 	@pr = PullRequest.all[@index]
 	erb :review
 end
+
+post "/review/:id" do 
+	@success = true
+	@index = params[:id].to_i
+	@pr = PullRequest.all[@index]
+	erb :review
+end

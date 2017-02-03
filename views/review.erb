@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Revision de Pull Request #<%= @index %></h1>
+	<% if @success %>
+		<h2>Pull Request Revisado</h2>
+	<% end %>
+
+	Creador: <%= @pr.creador %>
+	<br>
+	Link de Github: <%= @pr.link_github %>
+	<br>
+	Link de Jira: <%= @pr.link_jira %>
+
+	<form action="/review/<%= @index %>" method="POST">
+		Revisor
+		<input type="text" name="revisor">
+		<input type="submit" name="Aprobar" value="aprobar">
+		<input type="submit" name="Denegar" value="denegar">
+	</form>
+</body>
+</html>
