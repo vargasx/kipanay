@@ -5,14 +5,19 @@
 </head>
 <body>
 <h1>Crear Pull Request</h1>
+<% if @success %>
+	<h2>Pull Request creado</h2>
+<% else %>
+	<h2><%=@error %></h2>
+<% end %>
 <form method="POST" action="/pull_requests">
-	Creador
+	Creador*
 	<input type="text" name="creador" />
 	<br></br>
-	Link Github
+	Link Github*
 	<input type="text" name="link_github" />
 	<br></br>
-	Link JIRA
+	Link JIRA*
 	<input type="text" name="link_jira" />
 	<br></br>
 	Es critico?
@@ -27,7 +32,11 @@
 	Dependencias
 	<input type="text" name="dependencias" />
 	<br/>
+	<br/>
 	<input type="submit" name="guardar" value="guardar">
+	<br/>
+	<br/>
+	* campos obligatorios
 </form>
 
 </body>

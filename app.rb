@@ -10,5 +10,11 @@ get '/pull_requests/new' do
 end
 
 post '/pull_requests' do
-	erb :show
+	@success = false
+	if params['creador'].empty?
+		@error = "Los campos marcados con * son obligatorios"
+	else
+		@success = true
+	end
+	erb :pull_request
 end
