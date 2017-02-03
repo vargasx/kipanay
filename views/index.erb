@@ -21,14 +21,14 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% PullRequest.all.each do |pr|%>
+			<% @pull_requests.each do |pr|%>
 			<tr>
 				<td><%= pr.creador %></td>
 				<td><%= pr.link_github %></td>
 				<td><%= pr.link_jira %></td>
 				<td><%= pr.critico %></td>
 				<td><%= pr.revision_seguridad %></td>
-				<td><%= pr.dependencias %></td>			
+				<td><%= pr.dependencias %></td>
 				<td><%= pr.revision_staging %></td>
 			</tr>
 			<% end %>

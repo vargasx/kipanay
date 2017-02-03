@@ -1,7 +1,9 @@
 require 'sinatra'
 require './config'
+require './lib/pull_request'
 
 get '/' do
+	@pull_requests = PullRequest.all
 	erb :index
 end
 
@@ -16,5 +18,6 @@ post '/pull_requests' do
 	else
 		@success = true
 	end
+
 	erb :pull_request
 end
