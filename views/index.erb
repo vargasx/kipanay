@@ -32,7 +32,9 @@
 				<td><%= pr.revision_seguridad %></td>
 				<td><%= pr.dependencias %></td>
 				<td><%= pr.revision_staging %></td>
-				<td><a href="/pull_requests/<%= index %>" id="detalle_<%= index %>">Ver Detalle</a></td>
+				<td><a href="/pull_requests/<%= index %>" id="detalle_<%= index %>">Ver Detalle</a>
+				|
+				<a href="/review/<%= index %>" id="revisar_<%= index %>">Revisar</a></td>
 			</tr>
 			<% end %>
 		</tbody>
