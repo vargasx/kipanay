@@ -43,4 +43,42 @@ describe PullRequest do
 		pr.link_jira = ""
 		expect(pr.save).to be false
 	end
+
+	it "agrega una revision al PR" do
+		pr = PullRequest.new
+		pr.creador = "creador"
+		pr.link_github = "https://github"
+		pr.link_jira = "https://jira"
+		pr.save
+
+		response = pr.add_revision(
+			revisor: "apineda", 
+			dependencias: "ninguna", 
+			critico: false,
+			revision_seguridad: false,
+			revision_staging: true,
+			estado: 'aprobado')
+		expect(response).to be true	
+	end
+
+	it 'obtiene una revsion del PR' do
+		pr = PullRequest.new
+		pr.creador = "creador"
+		pr.link_github = "https://github"
+		pr.link_jira = "https://jira"
+		pr.save
+
+		params = {
+			revisor: "apineda", 
+			dependencias: "ninguna", 
+			critico: false,
+			revision_seguridad: false,
+			revision_staging: true,
+			estado: 'aprobado'
+		}
+		pr.add_revision(params)
+
+		revisions = pr.get_revisions()
+		expect(revisions).to eq([params])
+	end
 end
