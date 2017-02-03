@@ -6,21 +6,18 @@
 </head>
 <body>
 	<h1>Detalle PR #<%= @index %></h1>
-	Creador: <%= @pr.creador %>
-	<br>
-	Link de Github: <%= @pr.link_github %>
-	<br>
-	Link de Jira: <%= @pr.link_jira %>
-	<br>
-	Critico?: <%= @pr.critico ? "SI" : "NO" %> CRITICO
-	<br>
-	Seguridad?: <%= @pr.revision_seguridad ? "SI" : "NO" %> SEGURIDAD
-	<br>
-	Dependencias: <%= @pr.dependencias %>
-	<br>
-	Probado stg: <%= @pr.revision_staging ? "SI" : "NO" %> PROBADO
+	<dl class="dl-horizontal">
 
-	<br>
+		
+		<dt>Creador:</dt> <dd><%= @pr.creador %></dd>
+		<dt>Link de Github:</dt><dd> <%= @pr.link_github %></dd>
+
+		<dt>Link de Jira:</dt> <dd><%= @pr.link_jira %></dd>
+		<dt>Critico?:</dt> <dd><%= @pr.critico ? "SI" : "NO" %> CRITICO</dd>
+		<dt>Seguridad?:</dt> <dd><%= @pr.revision_seguridad ? "SI" : "NO" %> SEGURIDAD</dd>
+		<dt>Dependencias:</dt> <dd><%= @pr.dependencias %></dd>
+		<dt>Probado stg:</dt> <dd><%= @pr.revision_staging ? "SI" : "NO" %> PROBADO</dd>
+	</dl>
 	<a href="/" id="volver">volver</a>
 
 </body>
