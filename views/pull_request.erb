@@ -5,6 +5,16 @@
 </head>
 <body>
 <h1>Crear Pull Request</h1>
+<form method="POST" action="/pull_requests">
+	<input type="text" name="creador" />
+	<input type="text" name="link_github" />
+	<input type="text" name="link_jira" />
+	<input type="checkbox" name="critico" />
+	<input type="checkbox" name="revision_seguridad" />
+	<input type="checkbox" name="revision_staging" />
+	<input type="text" name="dependencias" />
+	<input type="submit" name="guardar" value="guardar">
+</form>
 
 </body>
 </html>
