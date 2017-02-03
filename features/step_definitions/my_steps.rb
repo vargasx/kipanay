@@ -1,4 +1,4 @@
-
+require './lib/pull_request'
 Given(/^el usuario abre la app$/) do
   visit "/"
 end
@@ -20,3 +20,15 @@ Given(/^el usuario llena el formulario$/) do
   check("revision_staging")
   fill_in("dependencias", with: "ninguna")
 end
+
+Given(/^existe un pull request con parametros "([^"]*)", "([^"]*)", "([^"]*)"$/) do |creador, github, jira|
+  pr = PullRequest.new
+  pr.creador = creador
+  pr.link_github = github
+  pr.link_jira = jira
+
+  pr.save
+
+
+end
+
