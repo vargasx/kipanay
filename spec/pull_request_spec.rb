@@ -30,4 +30,18 @@ describe PullRequest do
 		lista = PullRequest.all
 		expect(lista).to eq [pr]
 	end
+
+	it "retorna false cuando falta campo obligatorio" do
+		pr = PullRequest.new
+		expect(pr.save).to be false
+	end
+
+	it "retorna false cuando falta campo obligatorio link_jira" do
+		pr = PullRequest.new
+		pr.creador = "creador"
+		pr.link_github = "https://ssss"
+		pr.link_jira = ""
+		expect(pr.save).to be false
+	end
+
 end
